@@ -41,9 +41,8 @@ jobs:
                                   CROSS_COMPILE_ARM32=$GITHUB_WORKSPACE/arm-linux-androideabi-4.9/bin/arm-linux-androideabi- "
           
           cd kernel-source
-          make ${args} ${{ env.KERNEL_CONFIG }}
-          make -j$(($(getconf _NPROCESSORS_ONLN) * 2)) ${args}
-
+          make ${args} 
+          
       - name: Package kernel
         run: |
           git clone --depth=1 ${{ env.ANYKERNEL_SOURCE }} -b ${{ env.ANYKERNEL_SOURCE_BRANCH }} AnyKernel3 && rm -rf AnyKernel3/.git AnyKernel3/.github AnyKernel3/LICENSE AnyKernel3/README.md
