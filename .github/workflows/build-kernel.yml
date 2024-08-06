@@ -1,5 +1,4 @@
-name: Build MikaKernel
-
+name: linex! workflow
 
 on:
   workflow_dispatch:
@@ -31,8 +30,8 @@ jobs:
 
       - name: Build kernel
         run: |
-          export KBUILD_BUILD_USER="zclkkk"
-          export KBUILD_BUILD_HOST="workspace"
+          export KBUILD_BUILD_USER="ThRE"
+          export KBUILD_BUILD_HOST="Team"
           export PATH=$GITHUB_WORKSPACE/clang/bin:${PATH}
           args="                  ARCH=arm64 \
                                   O=../out \
